@@ -54,7 +54,7 @@ function add_aso_rtb_script() {
     <script>
     jQuery(document).ready(function() {
         if (typeof rtb_booking_form !== 'undefined') {
-            rtb_booking_form.datepicker.set( 'max', [2021,3,29] );
+            rtb_booking_form.datepicker.set( 'max', [2021,3,29] ); // JS dates... so month 3 is actually April
         }
     });
     </script>
@@ -71,7 +71,7 @@ function init_aso_rtb() {
     if ( is_plugin_active( 'restaurant-reservations/restaurant-reservations.php' ) ) {
         
         // Maybe check if a custom date-range is added
-        add_action( 'wp_footer', 'myscript' );
+        add_action( 'wp_footer', 'add_aso_rtb_script', 100 );
         
     } else {
         
